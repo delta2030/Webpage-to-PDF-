@@ -1,0 +1,22 @@
+The whole project can be divided into two problem statements-
+   a.Converting any url into PDF.
+   b.Extracting URL of a webpage via a chrome extension
+The solution of the two problems are discussed below
+a.Converting any url into PDF
+For coverting any given URL into PDF, I used PUPPETEER library, this library is used to download headless (i.e. without UI) webpages. It opens a new browser
+when launched and opens the specified url which is later downloaded as pdf in the directory and format specified.
+
+b.Extracting URL of a webpage via a chrome extension
+In order to extract URL of a webpage I used Chrome API BY USING chrome.tabs.query() syntax which store all the currently opened sites in the array tabs,
+in this array tabs[0] is the currently active tab and tabs[0].url provides the url of the currently active tab. For this function to work without error I 
+specified the permission of 'active tab' in manifest.json .
+
+ISSUES:
+The two problems were quite solvable independently but on combining the a few issues specifically two started arising, these issues are listed below-
+a.The program wasn't able to read PUPPETEER Function-
+The program on running wasn't able to dentify puppeteer library ebven when it was installed in the directory.
+
+b.Recieving end not defined
+This error arose beacause the computer wasn't able to recognise that send message syntax of google API and was paired with event listener, so the error 
+showed that receiver end wasn't defined. On doing research for this problem I figured out that there was a syntax added in the newer versions of chrome 
+API but implementing thaat bought about no change.
